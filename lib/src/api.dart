@@ -64,13 +64,7 @@ class UpiPay {
   }) async {
     final transactionDetails = TransactionDetails(
       upiApplication: app,
-      payeeAddress: receiverUpiAddress,
-      payeeName: receiverName,
-      transactionRef: transactionRef,
-      amount: amount,
-      deepLinkUrl: deepLinkUrl,
-      url: url,
-      transactionNote: transactionNote,
+      deepLinkUrl: deepLinkUrl
     );
     return await _transactionHelper.transact(_channel, transactionDetails);
   }
