@@ -37,7 +37,7 @@ class UpiPayPlugin internal constructor(registrar: Registrar, channel: MethodCha
   }
 
   private fun initiateTransaction(call: MethodCall) {
-//    val app: String? = call.argument("app")
+    val app: String? = call.argument("app")
 //    val pa: String? = call.argument("pa")
 //    val pn: String? = call.argument("pn")
 //    val mc: String? = call.argument("mc")
@@ -69,7 +69,7 @@ class UpiPayPlugin internal constructor(registrar: Registrar, channel: MethodCha
 //        uriStr += ("&tn=" + Uri.encode(tn))
 //      }
 //      uriStr += "&mode=00" // &orgid=000000"
-      val uri = Uri.parse(call.argument(deepLinkUrl))
+      val uri = Uri.parse(call.argument("deepLinkUrl"))
       // Log.d("upi_pay", "initiateTransaction URI: " + uri.toString())
 
       val intent = Intent(Intent.ACTION_VIEW, uri)
