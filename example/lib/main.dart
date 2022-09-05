@@ -85,6 +85,7 @@ class _ScreenState extends State<Screen> {
       transactionRef: transactionRef,
       transactionNote: 'UPI Payment',
       // merchantCode: '7372',
+      deepLinkUrl: ""
     );
 
     print(a);
