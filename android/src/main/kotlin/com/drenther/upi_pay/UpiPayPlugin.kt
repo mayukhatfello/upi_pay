@@ -37,15 +37,15 @@ class UpiPayPlugin internal constructor(registrar: Registrar, channel: MethodCha
   }
 
   private fun initiateTransaction(call: MethodCall) {
-    val app: String? = call.argument("app")
-    val pa: String? = call.argument("pa")
-    val pn: String? = call.argument("pn")
-    val mc: String? = call.argument("mc")
-    val tr: String? = call.argument("tr")
-    val tn: String? = call.argument("tn")
-    val am: String? = call.argument("am")
-    val cu: String? = call.argument("cu")
-    val url: String? = call.argument("url")
+//    val app: String? = call.argument("app")
+//    val pa: String? = call.argument("pa")
+//    val pn: String? = call.argument("pn")
+//    val mc: String? = call.argument("mc")
+//    val tr: String? = call.argument("tr")
+//    val tn: String? = call.argument("tn")
+//    val am: String? = call.argument("am")
+//    val cu: String? = call.argument("cu")
+//    val url: String? = call.argument("url")
 
     try {
       /*
@@ -54,22 +54,22 @@ class UpiPayPlugin internal constructor(registrar: Registrar, channel: MethodCha
        * 'abc 40upi' by these apps. The URI building logic is changed to avoid URL encoding
        * of the value of 'pa' parameter. - Reetesh
       */
-      var uriStr: String? = "upi://pay?pa=" + pa +
-              "&pn=" + Uri.encode(pn) +
-              "&tr=" + Uri.encode(tr) +
-              "&am=" + Uri.encode(am) +
-              "&cu=" + Uri.encode(cu)
-      if(url != null) {
-        uriStr += ("&url=" + Uri.encode(url))
-      }
-      if(mc != null) {
-        uriStr += ("&mc=" + Uri.encode(mc))
-      }
-      if(tn != null) {
-        uriStr += ("&tn=" + Uri.encode(tn))
-      }
-      uriStr += "&mode=00" // &orgid=000000"
-      val uri = Uri.parse(uriStr)
+//      var uriStr: String? = "upi://pay?pa=" + pa +
+//              "&pn=" + Uri.encode(pn) +
+//              "&tr=" + Uri.encode(tr) +
+//              "&am=" + Uri.encode(am) +
+//              "&cu=" + Uri.encode(cu)
+//      if(url != null) {
+//        uriStr += ("&url=" + Uri.encode(url))
+//      }
+//      if(mc != null) {
+//        uriStr += ("&mc=" + Uri.encode(mc))
+//      }
+//      if(tn != null) {
+//        uriStr += ("&tn=" + Uri.encode(tn))
+//      }
+//      uriStr += "&mode=00" // &orgid=000000"
+      val uri = Uri.parse(call.argument(deepLinkUrl))
       // Log.d("upi_pay", "initiateTransaction URI: " + uri.toString())
 
       val intent = Intent(Intent.ACTION_VIEW, uri)

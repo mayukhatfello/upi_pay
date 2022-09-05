@@ -58,6 +58,7 @@ class UpiPay {
     required String receiverName,
     required String transactionRef,
     required String amount,
+    required String deepLinkUrl,
     String? url,
     String? transactionNote,
   }) async {
@@ -67,6 +68,7 @@ class UpiPay {
       payeeName: receiverName,
       transactionRef: transactionRef,
       amount: amount,
+      deepLinkUrl: deepLinkUrl,
       url: url,
       transactionNote: transactionNote,
     );

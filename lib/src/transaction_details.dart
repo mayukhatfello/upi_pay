@@ -15,14 +15,16 @@ class TransactionDetails {
   final String? url;
   final String merchantCode;
   final String? transactionNote;
+  final String? deepLinkUrl;
 
-  TransactionDetails({
+  TransactionDetails( {
     required this.upiApplication,
     required this.payeeAddress,
     required this.payeeName,
     required this.transactionRef,
     this.currency: TransactionDetails._currency,
     required String amount,
+    required String this.deepLinkUrl,
     this.url,
     this.merchantCode: '',
     this.transactionNote: 'UPI Transaction',
@@ -56,6 +58,7 @@ class TransactionDetails {
       'url': url,
       'mc': merchantCode,
       'tn': transactionNote,
+      'deepLinkUrl': deepLinkUrl
     };
   }
 
