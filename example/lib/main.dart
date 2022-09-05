@@ -78,13 +78,7 @@ class _ScreenState extends State<Screen> {
     print("Starting transaction with id $transactionRef");
 
     final a = await UpiPay.initiateTransaction(
-      amount: _amountController.text,
       app: app.upiApplication,
-      receiverName: 'Sharad',
-      receiverUpiAddress: _upiAddressController.text,
-      transactionRef: transactionRef,
-      transactionNote: 'UPI Payment',
-      // merchantCode: '7372',
       deepLinkUrl: ""
     );
 

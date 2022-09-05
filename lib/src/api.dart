@@ -54,13 +54,7 @@ class UpiPay {
   /// [url]: See `url` parameter in [UPI Linking Specification](https://www.npci.org.in/sites/default/files/UPI%20Linking%20Specs_ver%201.6.pdf)
   static Future<UpiTransactionResponse> initiateTransaction({
     required UpiApplication app,
-    required String receiverUpiAddress,
-    required String receiverName,
-    required String transactionRef,
-    required String amount,
-    required String deepLinkUrl,
-    String? url,
-    String? transactionNote,
+    required String deepLinkUrl
   }) async {
     final transactionDetails = TransactionDetails(
       upiApplication: app,
