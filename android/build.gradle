@@ -1,5 +1,3 @@
-package android
-
 group 'com.drenther.upi_pay'
 version '1.0-SNAPSHOT'
 
